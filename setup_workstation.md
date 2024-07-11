@@ -167,3 +167,9 @@ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 
 sudo dpkg -i google-chrome-stable_current_amd64.deb
 ```
+
+Virtualbox:
+
+```bash
+sudo apt install -y /NAS/tech/install/virtualbox/virtualbox-7.0_7.0.18-162988~Ubuntu~noble_amd64.deb 
+```
