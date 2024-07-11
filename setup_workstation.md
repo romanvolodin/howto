@@ -76,3 +76,94 @@ gsettings set org.gnome.shell.extensions.dash-to-dock dash-max-icon-size 24
 ```bash
 ln --symbolic /NAS/tech/fonts/ .fonts
 ```
+
+## Устанавливаем и настраиваем софт
+
+```bash
+sudo apt install -y net-tools
+
+sudo apt install -y build-essential libssl-dev libffi-dev
+
+sudo apt install -y tree
+
+sudo apt install -y curl
+
+sudo apt install -y ffmpeg
+
+sudo apt install -y fuse
+
+sudo apt install -y git
+cp /NAS/tech/config/git/.gitconfig ~/
+cp /NAS/tech/config/git/.gitignore ~/
+```
+
+Python
+
+```bash
+sudo apt install -y python3-pip python3-venv python3-setuptools python3-wheel python3-dev python3-tk
+```
+
+Node.js через nvm (Node Version Manager)
+
+```bash
+# install nvm
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+
+# download and install Node.js (you may need to restart the terminal)
+nvm install 22
+
+node -v
+
+npm -v
+```
+
+### Десктопные приложения
+
+```bash
+sudo apt install -y doublecmd-gtk libunrar5
+cp -r /NAS/tech/config/doublecmd ~/.config/doublecmd
+# backup doublecmd config
+# cp -r ~/.config/doublecmd/ /NAS/tech/config/
+
+sudo apt install -y filezilla
+# настройки живут в .config/filezilla
+# надо бэкапить перед обновлением, а потом накатывать
+# сейчас есть копия в /NAS/tech/config/filezilla
+
+sudo apt install -y qbittorrent
+
+sudo apt install -y vlc
+# настройки живут в .config/vlc
+
+sudo apt install -y libreoffice-writer
+sudo apt install -y libreoffice-calc
+
+sudo snap install telegram-desktop
+```
+
+VS Code:
+
+```bash
+sudo snap install code --classic
+code --install-extension streetsidesoftware.code-spell-checker
+code --install-extension streetsidesoftware.code-spell-checker-russian
+# Enable in VSCode: F1 > Enable Russian Spell Checker Dictionary
+# Настройки пользователя живут в ~/.config/Code/User/settings.json
+# Надо бэкапить и восстанавливать
+```
+
+XnView:
+
+```bash
+sudo apt install -y /NAS/tech/install/xnview/XnViewMP-1.7.1-linux-x64.deb
+mkdir ~/.config/xnviewmp
+cp -r /NAS/tech/config/xnviewmp/xnview.ini ~/.config/xnviewmp/xnview.ini
+```
+
+Google Chrome:
+
+```bash
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+
+sudo dpkg -i google-chrome-stable_current_amd64.deb
+```
