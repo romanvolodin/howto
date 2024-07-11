@@ -44,3 +44,35 @@ sudo mount --types nfs 192.168.1.2:/NAS /NAS
 sudo sh -c "echo '192.168.1.2:/NAS /NAS nfs defaults 0 0' >> /etc/fstab"
 echo "file:///NAS NAS" >> ~/.config/gtk-3.0/bookmarks
 ```
+
+## Настройка Ubunutu
+
+`gsettings` надстройка над `dconf`. Можно `sudo apt install -y dconf-editor`, и визуально менять настройки. Плюс, наглядно видно, какие настройки вообще есть.
+
+Добавляем русскую ракладку клавиатуры, в дополнение к английской:
+
+```bash
+gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'us'), ('xkb', 'ru')]"
+
+gsettings set org.gnome.desktop.input-sources per-window true
+```
+
+Меняем цвет и обои рабочего стола (чтобы удалить картинку нужно передать пустой путь `""`):
+
+```bash
+gsettings set org.gnome.desktop.background picture-uri "file:///NAS/tech/config/system/green-forest-wallpaper.jpg"
+
+gsettings set org.gnome.desktop.background primary-color '#336677'
+```
+
+Настраиваем размера док-панели:
+
+```bash
+gsettings set org.gnome.shell.extensions.dash-to-dock dash-max-icon-size 24
+```
+
+Подключаем папку со шрифтами:
+
+```bash
+ln --symbolic /NAS/tech/fonts/ .fonts
+```
