@@ -90,11 +90,16 @@ sudo apt install -y curl
 
 sudo apt install -y ffmpeg
 
-sudo apt install -y fuse
-
 sudo apt install -y git
 cp /NAS/tech/config/git/.gitconfig ~/
 cp /NAS/tech/config/git/.gitignore ~/
+```
+
+Зависимости для AppImage
+
+```bash
+sudo add-apt-repository universe
+sudo apt install libfuse2t64
 ```
 
 Python
