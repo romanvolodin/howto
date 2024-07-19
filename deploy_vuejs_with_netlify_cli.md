@@ -1,6 +1,6 @@
 # Деплой Vue.js сайта на Netlify
 
-Это краткая выжимка из документации — https://docs.netlify.com/cli/get-started/
+Это краткая выжимка из документации — [](https://docs.netlify.com/cli/get-started/)
 
 ## Установка и настройка Netlify CLI
 
