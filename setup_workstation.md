@@ -179,3 +179,11 @@ Virtualbox:
 ```bash
 sudo apt install -y /NAS/tech/install/virtualbox/virtualbox-7.0_7.0.18-162988~Ubuntu~noble_amd64.deb 
 ```
+
+OBS Studio:
+
+```bash
+sudo add-apt-repository ppa:obsproject/obs-studio
+sudo apt update
+sudo apt install ffmpeg obs-studio
+```
