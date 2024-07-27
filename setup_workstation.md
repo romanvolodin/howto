@@ -3,6 +3,7 @@
 ## Настраиваем NAS
 
 Прежде всего надо настроить проводное соединение:
+
 - адрес: `192.168.1.1`
 - маска: `255.255.255.0`
 
@@ -13,7 +14,7 @@ sudo apt install -y nfs-common
 systemctl status nfs-common
 ```
 
-Eсли сервис запущен, то всё хорошо. Если нет, то проверяем файл сервиса (бывает, что это симлинк на `/dev/null`):
+Если сервис запущен, то всё хорошо. Если нет, то проверяем файл сервиса (бывает, что это симлинк на `/dev/null`):
 
 ```bash
 file /lib/systemd/system/nfs-common.service
@@ -45,11 +46,11 @@ sudo sh -c "echo '192.168.1.2:/NAS /NAS nfs defaults 0 0' >> /etc/fstab"
 echo "file:///NAS NAS" >> ~/.config/gtk-3.0/bookmarks
 ```
 
-## Настройка Ubunutu
+## Настройка Ubuntu
 
 `gsettings` надстройка над `dconf`. Можно `sudo apt install -y dconf-editor`, и визуально менять настройки. Плюс, наглядно видно, какие настройки вообще есть.
 
-Добавляем русскую ракладку клавиатуры, в дополнение к английской:
+Добавляем русскую раскладку клавиатуры, в дополнение к английской:
 
 ```bash
 gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'us'), ('xkb', 'ru')]"
