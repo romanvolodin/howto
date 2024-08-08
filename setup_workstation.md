@@ -46,6 +46,18 @@ sudo sh -c "echo '192.168.1.2:/NAS /NAS nfs defaults 0 0' >> /etc/fstab"
 echo "file:///NAS NAS" >> ~/.config/gtk-3.0/bookmarks
 ```
 
+## Копируем забекапленные настройки
+
+```bash
+# сохраняем так:
+# cp -r /home/roman/ /NAS/UNSORTED/
+# Но лучше бекапить выборочно. Ибо кеши всякие не нужны, 
+# а, например, Файрфокс (открытые страницы/сохраненные пароли) так не подхватывает настройки
+
+sudo cp -r /NAS/UNSORTED/roman/ /home/
+sudo chown -R roman /home/roman/
+```
+
 ## Настройка Ubuntu
 
 `gsettings` надстройка над `dconf`. Можно `sudo apt install -y dconf-editor`, и визуально менять настройки. Плюс, наглядно видно, какие настройки вообще есть.
@@ -94,6 +106,11 @@ sudo apt install -y ffmpeg
 sudo apt install -y git
 cp /NAS/tech/config/git/.gitconfig ~/
 cp /NAS/tech/config/git/.gitignore ~/
+
+echo "deb http://repo.yandex.ru/yandex-disk/deb/ stable main" | sudo tee -a /etc/apt/sources.list.d/yandex-disk.list > /dev/null && \
+wget http://repo.yandex.ru/yandex-disk/YANDEX-DISK-KEY.GPG -O- | sudo apt-key add - && \
+sudo apt-get update && \
+sudo apt-get install -y yandex-disk
 ```
 
 Зависимости для AppImage
@@ -144,6 +161,8 @@ sudo apt install -y vlc
 sudo apt install -y libreoffice-writer
 sudo apt install -y libreoffice-calc
 
+# можно не устанавливать, просто запустить /NAS/tech/soft/telegram/Telegram
+# Телеграм сам добавит себя в меню программ 
 sudo snap install telegram-desktop
 ```
 
@@ -161,7 +180,7 @@ code --install-extension streetsidesoftware.code-spell-checker-russian
 XnView:
 
 ```bash
-sudo apt install -y /NAS/tech/install/xnview/XnViewMP-1.7.1-linux-x64.deb
+sudo apt install -y /NAS/tech/install/xnview/XnViewMP-1.7.2-linux-x64.deb
 mkdir ~/.config/xnviewmp
 cp -r /NAS/tech/config/xnviewmp/xnview.ini ~/.config/xnviewmp/xnview.ini
 ```
@@ -171,7 +190,7 @@ Google Chrome:
 ```bash
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 
-sudo dpkg -i google-chrome-stable_current_amd64.deb
+sudo apt install -y ./google-chrome-stable_current_amd64.deb
 ```
 
 Virtualbox:
