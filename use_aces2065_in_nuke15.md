@@ -19,7 +19,7 @@ default LUT settings
 
 ## Viewer
 
-- **viewerProcess:** AVES 1.0 - SDR Video (Rec.1886 Rec.709 - Display)
+- **viewerProcess:** ACES 1.0 - SDR Video (Rec.1886 Rec.709 - Display)
 
 ## EXR файлы
 
@@ -38,4 +38,4 @@ default LUT settings
 
 - **transform type:** display
 - **display:** Rec.1886 Rec.709 - Display
-- **view:** AVES 1.0 - SDR Video
+- **view:** ACES 1.0 - SDR Video
