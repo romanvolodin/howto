@@ -4,7 +4,7 @@
 
 Прежде всего надо настроить проводное соединение:
 
-- адрес: `192.168.1.1`
+- адрес: `192.168.10.1`
 - маска: `255.255.255.0`
 
 ### Ставим необходимые пакеты
@@ -41,8 +41,8 @@ systemctl status nfs-common
 
 ```bash
 sudo mkdir /NAS
-sudo mount --types nfs 192.168.1.2:/NAS /NAS
-sudo sh -c "echo '192.168.1.2:/NAS /NAS nfs defaults 0 0' >> /etc/fstab"
+sudo mount --types nfs 192.168.10.2:/NAS /NAS
+sudo sh -c "echo '192.168.10.2:/NAS /NAS nfs defaults 0 0' >> /etc/fstab"
 echo "file:///NAS NAS" >> ~/.config/gtk-3.0/bookmarks
 ```
 
