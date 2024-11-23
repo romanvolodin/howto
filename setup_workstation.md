@@ -180,7 +180,7 @@ code --install-extension streetsidesoftware.code-spell-checker-russian
 XnView:
 
 ```bash
-sudo apt install -y /NAS/tech/install/xnview/XnViewMP-1.8.0-linux-x64.deb
+sudo apt install -y /NAS/tech/install/xnview/XnViewMP-1.8.3-linux-x64.deb
 mkdir ~/.config/xnviewmp
 cp -r /NAS/tech/config/xnviewmp/xnview.ini ~/.config/xnviewmp/xnview.ini
 ```
