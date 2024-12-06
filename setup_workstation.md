@@ -16,6 +16,18 @@
 
 ### Ставим необходимые пакеты
 
+#### Кратко
+
+Это выжимка секции "Подробно". В последние разы не было случаев, когда не надо было бы удалять симлинк, поэтому решил чуток упростить жизнь.
+
+```bash
+sudo apt install -y nfs-common
+sudo rm /lib/systemd/system/nfs-common.service
+sudo systemctl enable --now nfs-common
+```
+
+#### Подробно
+
 ```bash
 sudo apt install -y nfs-common
 systemctl status nfs-common
