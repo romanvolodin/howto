@@ -40,7 +40,7 @@ sudo systemctl enable --now nfs-common
 systemctl status nfs-common
 ```
 
-В последних версиях Убунты (23.10, 24.04) обычно показывает, что сервис  `inactive (dead)`, но NAS при этом монтируется и всё работает. Пока забил и не разбирался.
+В последних версиях Убунты (23.10, 24.04) обычно показывает, что сервис `inactive (dead)`, но NAS при этом монтируется и всё работает. Пока забил и не разбирался.
 
 ### Монтируем NAS
 
@@ -58,7 +58,7 @@ echo "file:///NAS NAS" >> ~/.config/gtk-3.0/bookmarks
 ```bash
 # сохраняем так:
 # cp -r /home/roman/ /NAS/UNSORTED/
-# Но лучше бекапить выборочно. Ибо кеши всякие не нужны, 
+# Но лучше бекапить выборочно. Ибо кеши всякие не нужны,
 # а, например, Файрфокс (открытые страницы/сохраненные пароли) так не подхватывает настройки
 
 sudo cp -r /NAS/UNSORTED/roman/ /home/
@@ -169,7 +169,7 @@ sudo apt install -y libreoffice-writer
 sudo apt install -y libreoffice-calc
 
 # можно не устанавливать, просто запустить /NAS/tech/soft/telegram/Telegram
-# Телеграм сам добавит себя в меню программ 
+# Телеграм сам добавит себя в меню программ
 sudo snap install telegram-desktop
 ```
 
@@ -203,7 +203,7 @@ sudo apt install -y ./google-chrome-stable_current_amd64.deb
 Virtualbox:
 
 ```bash
-sudo apt install -y /NAS/tech/install/virtualbox/virtualbox-7.0_7.0.18-162988~Ubuntu~noble_amd64.deb 
+sudo apt install -y /NAS/tech/install/virtualbox/virtualbox-7.0_7.0.18-162988~Ubuntu~noble_amd64.deb
 ```
 
 OBS Studio:
