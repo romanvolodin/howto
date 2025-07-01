@@ -21,21 +21,23 @@ default LUT settings
 
 - **viewerProcess:** ACES 1.0 - SDR Video (Rec.1886 Rec.709 - Display)
 
-## EXR файлы
+## На входе
 
-На входе указываем
+EXR файлы
 
 - **Input Transform:** aces_interchange (ACES2065-1)
 
-На выходе, соответственно:
+## На выходе
+
+EXR файлы:
 
 - **transform type:** colorspace
 - **output transform:** aces_interchange (ACES2065-1)
 
-## MP4 файлы
-
-На выходе:
+MP4 файлы:
 
 - **transform type:** display
 - **display:** Rec.1886 Rec.709 - Display
 - **view:** ACES 1.0 - SDR Video
+
+ВАЖНО: Если нужны картинки JPG, PNG с тем цветом, как вы видите во вьювере — используйте настройки цвета как для MP4. Иначе цвет чуть другой.
