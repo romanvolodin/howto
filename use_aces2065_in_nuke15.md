@@ -7,7 +7,7 @@
 - **color management:** OCIO
 - **OCIO config:** fn-nuke_studio-config-v1.0.0_aces-v1:3_ocio-v2.1
 
-default LUT settings
+Больше в проекте ничего настраивать не надо, можно переходить к следующим разделам. На всякий случай настройки `default LUT settings`:
 
 - **working space:** scene_linear (ACEScg)
 - **Thumbnails:** ACES 1.0 - SDR Video (sRGB - Display)
