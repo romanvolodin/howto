@@ -143,6 +143,9 @@ Python
 
 ```bash
 sudo apt install -y python3-pip python3-venv python3-setuptools python3-wheel python3-dev python3-tk
+
+# Менеджер пакетов uv
+curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
 Node.js через nvm (Node Version Manager)
