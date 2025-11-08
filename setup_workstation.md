@@ -225,3 +225,9 @@ sudo add-apt-repository ppa:obsproject/obs-studio
 sudo apt update
 sudo apt install ffmpeg obs-studio
 ```
+
+Bitwarden:
+
+```bash
+sudo snap install bitwarden
+```
