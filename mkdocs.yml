@@ -1,0 +1,39 @@
+site_name: База знаний
+repo_name: romanvolodin/howto
+docs_dir: src
+repo_url: https://github.com/romanvolodin/howto
+edit_uri: blob/main/src/
+theme:
+  name: material
+  language: ru
+  features:
+    - content.code.select
+    - content.code.copy
+    - content.action.view
+    - content.action.edit
+  palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to system preference
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
