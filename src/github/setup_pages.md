@@ -1,0 +1,74 @@
+# Настройка автоматической публикации документации на GitHub Pages
+
+## Настройка Pages
+
+- Перейдите в настройки репозитория, раздел **Pages** — `https://github.com/{username}/{reponame}/settings/pages`
+- В **Source** выберите **GitHub Action**
+
+## Настройка workflow
+
+Создайте файл `.github/workflows/deploy.yml`:
+
+```yaml
+name: Deploy MkDocs to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  build_docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.13
+
+      - name: Install uv
+        run: pip install uv
+
+      - name: Install dependencies with uv
+        run: uv sync --frozen --no-dev
+
+      - name: Build MkDocs site
+        run: uv run mkdocs gh-deploy --force
+
+  deploy_docs:
+    needs: build_docs
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "."
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+```
+
+## Документация онлайн
+
+После пуша на GitHub сайт с документацией будет опубликован по адресу `https://{username}.github.io/{reponame}`
