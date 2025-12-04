@@ -16,6 +16,9 @@ on:
   push:
     branches:
       - main
+    paths:
+      - "src/**"  # Сборка будет срабатывать при изменении файлов в этой папке
+  workflow_dispatch:  # Позволяет запустить вручную
 permissions:
   contents: write
   pages: write
